@@ -1,6 +1,7 @@
 package unit10;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Scramble {
 
@@ -78,8 +79,17 @@ public class Scramble {
      * 
      * @param arr array of integers to shuffle
      */
-    public static void shuffle(int arr[]) {
-        // TODO
+    public static void shuffle(int[] A)
+    {
+        for (int i = A.length - 1; i >= 1; i--)
+        {
+            Random rand = new Random();
+            int j = rand.nextInt(i + 1);
+            
+            int temp = A[i];
+            A[i] = A[j];
+            A[j] = temp;
+        }
     }
 
     public static void main(String args[]) {
