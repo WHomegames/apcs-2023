@@ -75,7 +75,7 @@ public class Scramble {
     }
 
     /**
-     * TODO how does this function work?
+     * loop trough backwards. random organize through list switching one to the other.
      * 
      * @param arr array of integers to shuffle
      */
