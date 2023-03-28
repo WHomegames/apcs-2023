@@ -1,0 +1,71 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Bored",
+            "request": "launch",
+            "mainClass": "Bored",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
+            "name": "Baum",
+            "request": "launch",
+            "mainClass": "unit10.Baum",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
+            "name": "Maze",
+            "request": "launch",
+            "mainClass": "unit10.Maze",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
+            "name": "Recur",
+            "request": "launch",
+            "mainClass": "unit10.Recur",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
+            "name": "Scramble",
+            "request": "launch",
+            "mainClass": "unit10.Scramble",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
+            "name": "Scramble2",
+            "request": "launch",
+            "mainClass": "unit10.Scramble2",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
+            "name": "Explorer",
+            "request": "launch",
+            "mainClass": "unit10.lab01acfl.Explorer",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
+            "name": "SpellingBee",
+            "request": "launch",
+            "mainClass": "unit10.lab02bee.SpellingBee",
+            "projectName": "apcs-2023_80f8798b"
+        }
+    ]
+}

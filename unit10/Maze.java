@@ -2,6 +2,7 @@ package unit10;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
+import java.awt.Point;
 
 public class Maze {
     private boolean solution;
@@ -14,32 +15,76 @@ public class Maze {
      * @param cols the number of columns
      * @param line the values to be placed in the maze.
      */
-    public Maze(int rows, int cols, String line) {
-        // TODO part a
+    public Maze(int rows, int cols, String line)
+    {
+        maze = new char[rows][cols];
+        solution = false;
 
+        for(int i = 0; i < rows; i++)
+        {
+            for(int j = 0; j < cols; j++)
+            {
+                maze[i][j] = line.charAt(i * rows + j);
+            }
+        }
+
+        //System.out.println(getStart());
+        //System.out.println(getEnd());
+        check(getStart());
     }
 
     /**
-     * @return the starting coordinates as "r c"
+     * @return the starting coordinates as "x y"
      */
-    public String getStart() { /* Not shown, plz ignore implementation */
+    /*
+    public String getStart() { // Not shown, plz ignore implementation
         int z = Arrays.stream(maze).map(String::new).collect(Collectors.joining("")).indexOf('@');
         return "" + z / maze[0].length + " " + z % maze[0].length;
     }
+    */
+
+    public Point getStart() { // Not shown, plz ignore implementation
+        int z = Arrays.stream(maze).map(String::new).collect(Collectors.joining("")).indexOf('@');
+        return new Point(z / maze[0].length, z % maze[0].length);
+    }
 
     /**
-     * @return the ending coordinates as "r c"
+     * @return the ending coordinates as "x y"
      */
-    public String getEnd() { /* Not shown, plz ignore implementation */
+
+    /*
+    public String getEnd() { // Not shown, plz ignore implementation 
         int z = Arrays.stream(maze).map(String::new).collect(Collectors.joining("")).indexOf('$');
         return "" + z / maze[0].length + " " + z % maze[0].length;
+    }
+    */
+
+    public Point getEnd() { /* Not shown, plz ignore implementation */
+        int z = Arrays.stream(maze).map(String::new).collect(Collectors.joining("")).indexOf('$');
+        return new Point(z / maze[0].length, z % maze[0].length);
+    }
+
+    private boolean isNotCheckedAndIsInBoundsAndIsGood(Point c)
+    {
+        if(c.x >= 0 && c.x < maze.length && c.y >= 0 && c.y < maze[0].length)
+
+            return maze[c.x][c.y] != 'c' && maze[c.x][c.y] != '#';
+        else
+        
+            return false;
+    }
+
+    private void setChecked(Point c)
+    {
+        if(c.x >= 0 && c.x < maze.length && c.y >= 0 && c.y < maze[0].length)
+            maze[c.x][c.y] = 'c';
     }
 
     /**
      * Uses recursion to see if the maze has a solution or not.
      * 
      * Suggested algorithm:
-     * if R and C are in bounds and spot is !#
+     * if X and Y are in bounds and spot is not a #
      * - if you are at $:
      * - - set has a solution
      * - else:
@@ -49,11 +94,43 @@ public class Maze {
      * - - recur left
      * - - recur right
      * 
-     * @param r current row index
-     * @param c current column index
+     * @param pos current position in 2D array
      */
-    private void check(int r, int c) {
-        // TODO part b
+    private void check(Point pos)
+    {
+        //System.out.println("steping forward in call stack");
+        //System.out.print("looping... is a clear path? : ");
+        //System.out.println(isNotCheckedAndIsInBoundsAndIsGood(pos));
+
+        if(isNotCheckedAndIsInBoundsAndIsGood(pos) && !solution) 
+        {
+            //System.out.println("checking: " + pos);
+            
+            if(pos.equals(getEnd()))
+            {
+                System.out.println("Is it over? YES");
+                solution = true;
+
+                setChecked(pos);
+            }
+            else 
+            {
+                setChecked(pos);
+
+
+                check(new Point(pos.x + 1, pos.y)); //right
+                check(new Point(pos.x, pos.y + 1)); //up
+                check(new Point(pos.x - 1, pos.y)); //left
+                check(new Point(pos.x, pos.y - 1)); //down
+            }
+
+        }
+        else
+        {
+            //System.out.println("did not travel path");
+            //System.out.println("steping backward in call stack");
+        }
+
 
     }
 
@@ -63,8 +140,8 @@ public class Maze {
      * @return true if the maze has a path from Start (@) to End ($).
      */
     public boolean hasSolution() {
-        // TODO part c
-        return false; // replace me!
+        
+        return solution;
 
     }
 
