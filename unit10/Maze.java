@@ -111,7 +111,6 @@ public class Maze {
                 System.out.println("Is it over? YES");
                 solution = true;
 
-                setChecked(pos);
             }
             else 
             {
