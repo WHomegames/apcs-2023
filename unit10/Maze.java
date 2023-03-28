@@ -102,7 +102,7 @@ public class Maze {
         //System.out.print("looping... is a clear path? : ");
         //System.out.println(isNotCheckedAndIsInBoundsAndIsGood(pos));
 
-        if(isNotCheckedAndIsInBoundsAndIsGood(pos) && !solution) 
+        if(isNotCheckedAndIsInBoundsAndIsGood(pos) && !solution)
         {
             //System.out.println("checking: " + pos);
             
