@@ -101,11 +101,9 @@ public class Maze {
         //System.out.println("steping forward in call stack");
         //System.out.print("looping... is a clear path? : ");
         //System.out.println(isNotCheckedAndIsInBoundsAndIsGood(pos));
-
         if(isNotCheckedAndIsInBoundsAndIsGood(pos) && !solution)
         {
             //System.out.println("checking: " + pos);
-            
             if(pos.equals(getEnd()))
             {
                 System.out.println("Is it over? YES");
@@ -116,13 +114,11 @@ public class Maze {
             {
                 setChecked(pos);
 
-
                 check(new Point(pos.x + 1, pos.y)); //right
                 check(new Point(pos.x, pos.y + 1)); //up
                 check(new Point(pos.x - 1, pos.y)); //left
                 check(new Point(pos.x, pos.y - 1)); //down
             }
-
         }
         else
         {
