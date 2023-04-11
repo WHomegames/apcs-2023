@@ -15,9 +15,16 @@ public class APCalendar {
 	 * Returns the number of leap years between year1 and year2, inclusive.
 	 * Precondition: 0 <= year1 <= year2
 	 */
-	public static int numberOfLeapYears(int year1, int year2) {
-		/* to be implemented in part (a) */
-		return -1; // replace me!
+	public static int numberOfLeapYears(int year1, int year2)
+	{
+		int count = 0;
+		for(int i = year1; i <= year2; i++)
+		{
+			if(isLeapYear(i))
+				count++;
+		}
+
+		return count;
 	}
 
 	/**
@@ -43,9 +50,9 @@ public class APCalendar {
 	 * and 6 denotes Saturday.
 	 * Precondition: The date represented by month, day, year is a valid date.
 	 */
-	public static int dayOfWeek(int month, int day, int year) {
-		/* to be implemented in part (b) */
-		return -1; // replace me!
+	public static int dayOfWeek(int month, int day, int year)
+	{
+		return ((dayOfYear(month, day, year) + firstDayOfYear(year)) - 1) % 7;
 	}
 
 	public static void check(boolean test) throws AssertionError {
@@ -61,7 +68,6 @@ public class APCalendar {
 		check(APCalendar.dayOfYear(1, 1, 1992) == 1);
 		check(APCalendar.dayOfYear(3, 1, 2017) == 60);
 		check(APCalendar.dayOfYear(3, 1, 2016) == 61);
-
 		// part (a) tests
 		check(APCalendar.numberOfLeapYears(1976, 2023) == 12);
 		check(APCalendar.numberOfLeapYears(2000, 2016) == 5);

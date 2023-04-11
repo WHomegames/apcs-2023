@@ -4,7 +4,20 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
+        {
+            "type": "java",
+            "name": "FrogSimulation",
+            "request": "launch",
+            "mainClass": "unit11.FrogSimulation",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
+            "name": "APCalendar",
+            "request": "launch",
+            "mainClass": "unit11.APCalendar",
+            "projectName": "apcs-2023_80f8798b"
+        },
         {
             "type": "java",
             "name": "Current File",
