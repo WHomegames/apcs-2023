@@ -75,8 +75,6 @@ public class FrogSimulation {
         for(int i = 0; i < num; i++)
             count += (simulate()) ? 1 : 0;
 
-        this.leapCount = 400 * 5; //hack to complete last check.
-
         return count / num;
     }
 
