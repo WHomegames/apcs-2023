@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "StepTracker",
+            "request": "launch",
+            "mainClass": "unit11.StepTracker",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
+            "name": "CodeWordChecker",
+            "request": "launch",
+            "mainClass": "unit11.CodeWordChecker",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
             "name": "FrogSimulation",
             "request": "launch",
             "mainClass": "unit11.FrogSimulation",
