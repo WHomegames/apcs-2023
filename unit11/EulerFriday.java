@@ -57,27 +57,32 @@ public class EulerFriday
 
         //Recur.pot()
 
-        //int largestPal = 0;
-        //int a = 999;
-        //int b = 999;
+        int largestPal = 0;
 
-        // while()
-        // {
-        //     int palMaybe = a*b;
+        for(int a = 100; a < 999; a++)
+        {
+            for(int b = 100; b < 999; b++)
+            {
 
-        //     if(Recur.pot(Integer.toString(palMaybe)))
-        //     {
-        //         if(palMaybe > largestPal)
-        //             largestPal = palMaybe;
-        //     }
+                int palMaybe = a*b;
+
+                if(Recur.pot(Integer.toString(palMaybe)))
+                {
+                    if(palMaybe > largestPal)
+                        largestPal = palMaybe;
+                }
+            }
+        }
+
+        System.out.println(largestPal);
 
 
         // }
 
-        //for(int i = 1; i <= 20; i++)
-        //{
+        // for(int i = 1; i <= 20; i++)
+        // {
         //    GCD(i,);
-        //}
+        // }
 
 
 
