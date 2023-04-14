@@ -2,7 +2,6 @@ package unit11;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 // 2016 FRQ #1
 // https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap16_frq_computer_science_a.pdf#page=2
