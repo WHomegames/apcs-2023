@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RandomStringChooser",
+            "request": "launch",
+            "mainClass": "unit11.RandomStringChooser",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
             "name": "StepTracker",
             "request": "launch",
             "mainClass": "unit11.StepTracker",
