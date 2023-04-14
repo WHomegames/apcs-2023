@@ -1,21 +1,90 @@
 package unit11;
 
-public class EulerFriday {
+import unit10.Recur;
 
-    public static void main(String[] args) {
+public class EulerFriday
+{
+
+    public static void main(String[] args)
+    {
 
         // 1
         int sum = 0;
-        for (int i = 0; i < 1000; i++) {
-
+        for (int i = 1; i < 1000; i++)
+        {
+            if(i % 5 == 0 || i % 3 == 0)
+                sum += i;
         }
         System.out.println(sum);
 
         // 2
 
+        sum = 0;
+        int first = 1;
+        int second = 2;
+
+        while(second < 4000000)
+        {
+            if(second % 2 == 0)
+                sum += second;
+
+            int temp = first + second;
+            first = second;
+            second = temp;
+
+        }
+
+        System.out.println(sum);
+
+        sum = 0;
+
+        long factorMe = 600851475143l;
+        long factor = 2l;
+
+        while(factor < factorMe)
+        {
+            if(factorMe % factor == 0)
+            {
+                factorMe /= factor;
+            }
+            else
+            {
+                factor++;
+            }
+        }
+
+        System.out.println(factorMe);
+
+        //Recur.pot()
+
+        //int largestPal = 0;
+        //int a = 999;
+        //int b = 999;
+
+        // while()
+        // {
+        //     int palMaybe = a*b;
+
+        //     if(Recur.pot(Integer.toString(palMaybe)))
+        //     {
+        //         if(palMaybe > largestPal)
+        //             largestPal = palMaybe;
+        //     }
+
+
+        // }
+
+        //for(int i = 1; i <= 20; i++)
+        //{
+        //    GCD(i,);
+        //}
+
+
+
     }
 
-    static int[] prob8scaffold() {
+    static int[] prob8scaffold()
+    {
         // woo java 13 supports multi-line strings!
         String lines = """
                 73167176531330624919225119674426574742355349194934
@@ -43,10 +112,21 @@ public class EulerFriday {
         // split into digits and parse into int array
         String[] digitArr = lines.trim().split("");
         int[] nums = new int[digitArr.length];
-        for (int i = 0; i < digitArr.length; i++) {
+        for (int i = 0; i < digitArr.length; i++)
+        {
             nums[i] = Integer.parseInt(digitArr[i]);
         }
         return nums;
     }
 
+
+    public static int GCD(int a, int b)
+    {
+        return (a%b == 0) ? b : GCD(b, a%b);
+    }
+
+    public static int LCM(int a, int b)
+    {
+        return (a*b) / GCD(a, b);
+    }
 }

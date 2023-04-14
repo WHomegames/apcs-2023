@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "EulerFriday",
+            "request": "launch",
+            "mainClass": "unit11.EulerFriday",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
             "name": "RandomStringChooser",
             "request": "launch",
             "mainClass": "unit11.RandomStringChooser",
