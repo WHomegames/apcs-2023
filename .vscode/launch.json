@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "WordPairList",
+            "request": "launch",
+            "mainClass": "unit11.WordPairList",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
+            "name": "ReviewAnalysis",
+            "request": "launch",
+            "mainClass": "unit11.ReviewAnalysis",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
             "name": "EulerFriday",
             "request": "launch",
             "mainClass": "unit11.EulerFriday",

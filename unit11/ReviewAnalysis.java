@@ -22,6 +22,7 @@ class Review {
         return rating;
     }
 
+
     public String getComment() {
         return comment;
     }
@@ -45,9 +46,19 @@ public class ReviewAnalysis {
      * Precondition: allReviews contains at least one Review.
      * No element of allReviews is null.
      */
-    public double getAverageRating() {
-        /* to be implemented in part (a) */
-        return -1; // replace me!
+    public double getAverageRating()
+    {
+        double rating = 0;
+
+        for (Review review : allReviews)
+        {
+            rating += review.getRating();
+        }
+
+        rating /= allReviews.length;
+
+        return rating;
+        
     }
 
     /**
@@ -58,8 +69,22 @@ public class ReviewAnalysis {
      * Postcondition: allReviews is unchanged.
      */
     public ArrayList<String> collectComments() {
-        /* to be implemented in part (b) */
-        return null; // replace me!
+        ArrayList<String> comments = new ArrayList<String>();
+
+        for(int i = 0; i < allReviews.length - 1; i++)
+        {
+            String funny = i + "-" + allReviews[i].getComment();
+
+            if(funny.contains("!"))
+            {
+                if(funny.charAt(funny.length() - 1) != '!' && funny.charAt(funny.length() - 1) != '.')
+                    funny = funny + ".";
+
+                comments.add(funny);
+            }
+        }
+
+        return comments;
     }
 
     public static void check(boolean test) throws AssertionError {
@@ -78,6 +103,7 @@ public class ReviewAnalysis {
         // part b
         ArrayList<String> comments = analysis.collectComments();
         String[] target = new String[] { "0-Good! Thx.", "2-Great!", "3-Poor! Bad." };
+        System.out.println(comments);
         check(Arrays.equals(comments.toArray(new String[comments.size()]), target));
 
         System.out.println("Happy Panda! \uD83D\uDC3C");

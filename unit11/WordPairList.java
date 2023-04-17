@@ -38,16 +38,32 @@ public class WordPairList {
      * Constructs a WordPairList object as described in part (a).
      * Precondition: words.length >= 2
      */
-    public WordPairList(String[] words) {
-        /* to be implemented in part (a) */
+    public WordPairList(String[] words)
+    {
+        allPairs = new ArrayList<WordPair>();
+
+        int j = 1;
+        for(int i = 0; i < j; i++)
+        {
+            for(j = i + 1; j < words.length; j++)
+            {
+                allPairs.add(new WordPair(words[i], words[j]));
+            }
+        }
     }
 
     /**
      * Returns the number of matches as described in part (b).
      */
-    public int numMatches() {
-        /* to be implemented in part (b) */
-        return -1; // replace me!
+    public int numMatches()
+    {
+        int num = 0;
+        for (WordPair aPair : allPairs)
+        {
+            num += aPair.getFirst().equals(aPair.getSecond()) ? 1 : 0;
+        }
+
+        return num;
     }
 
     public static void check(boolean test) throws AssertionError {
