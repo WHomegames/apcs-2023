@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ClubMembers",
+            "request": "launch",
+            "mainClass": "unit11.ClubMembers",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
+            "name": "Delimiters",
+            "request": "launch",
+            "mainClass": "unit11.Delimiters",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
             "name": "WordPairList",
             "request": "launch",
             "mainClass": "unit11.WordPairList",

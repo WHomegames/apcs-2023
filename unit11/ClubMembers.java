@@ -42,14 +42,33 @@ public class ClubMembers {
         this(new ArrayList<MemberInfo>());
     }
 
-    public void addMembers(String[] names, int gradYear) {
-        // TODO a
+    public void addMembers(String[] names, int gradYear)
+    {
+        for (String name : names)
+        {
+            members.add(new MemberInfo(name, gradYear, true));
+        }
 
     }
 
     public ArrayList<MemberInfo> removeMembers(int year) {
-        // TODO b;
-        return null; // replace me
+        ArrayList<MemberInfo> memberInfoList = new ArrayList<MemberInfo>();
+
+        for (int i = 0; i < members.size(); i++)
+        {
+            MemberInfo memberInfo = members.get(i);
+
+            if(memberInfo.getGradYear() <= year)
+            {
+                if(memberInfo.inGoodStanding())
+                    memberInfoList.add(memberInfo);
+                    
+                members.remove(i);
+                i--;
+            }
+        }
+
+        return memberInfoList;
     }
 
     public static void check(boolean test) throws AssertionError {
