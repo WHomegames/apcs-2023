@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ArrayTester",
+            "request": "launch",
+            "mainClass": "unit11.ArrayTester",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
             "name": "ClubMembers",
             "request": "launch",
             "mainClass": "unit11.ClubMembers",

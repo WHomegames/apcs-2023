@@ -1,5 +1,6 @@
 package unit11;
 
+import java.util.ArrayList;
 // 2018 FRQ #4
 //https://secure-media.collegeboard.org/ap/pdf/ap18-frq-computer-science-a.pdf#page=14
 import java.util.Arrays;
@@ -17,9 +18,16 @@ public class ArrayTester {
      * Precondition: c is a valid column index in arr2D.
      * Postcondition: arr2D is unchanged.
      */
-    public static int[] getColumn(int[][] arr2D, int c) {
-        // TODO part a
-        return null; // replace me!
+    public static int[] getColumn(int[][] arr2D, int c)
+    {
+        int[] column = new int[arr2D.length];
+
+        for(int i = 0; i < arr2D.length; i++)
+        {
+            column[i] = arr2D[i][c];
+        }
+
+        return column;
     }
 
     /**
@@ -51,8 +59,21 @@ public class ArrayTester {
      * square has at least one row.
      */
     public static boolean isLatin(int[][] square) {
-        // TODO part b
-        return false; // replace me!
+        boolean isLatin = true;
+
+        if(containsDuplicates(getColumn(square, 0)));
+            isLatin = false;
+        
+        for (int i = 1; i < square.length; i++)
+        {
+            if(!hasAllValues(getColumn(square, 0), getColumn(square, i)))
+                isLatin = false;
+
+            if(!hasAllValues(getColumn(square, 0), square[i]))
+                isLatin = false;
+        }
+
+        return isLatin;
     }
 
     public static void check(boolean test) throws AssertionError {
