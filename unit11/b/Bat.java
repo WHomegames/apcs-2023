@@ -29,9 +29,9 @@ public class Bat {
         int s2 = 0;
         for (int k = 0; k < arr.length; k++) {
             int num = arr[k];
-            if ((num > 0) && (num % 2 == 0))
+            if ((num > 0) && (num % 2 == 0)) //finds all positive even numbers exept zero;
                 s1 += num;
-            else if (num < 0)
+            else if (num < 0) // finds all negative odd numbers exept zero.
                 s2 += num;
         }
         System.out.println(s1);

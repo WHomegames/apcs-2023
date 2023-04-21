@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Crossword",
+            "request": "launch",
+            "mainClass": "unit11.Crossword",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
+            "name": "ArrayResizer",
+            "request": "launch",
+            "mainClass": "unit11.ArrayResizer",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
             "name": "ArrayTester",
             "request": "launch",
             "mainClass": "unit11.ArrayTester",

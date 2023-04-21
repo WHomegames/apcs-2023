@@ -5,10 +5,16 @@ package unit11;
 import java.util.Arrays;
 
 public class ArrayResizer {
-    public static boolean isNonZeroRow(int[][] array2D, int r) {
-        // TODO part a
+    public static boolean isNonZeroRow(int[][] array2D, int r)
+    {
+        boolean notZero = true;
+        for(int i = 0; i < array2D[r].length; i++)
+        {
+            if(array2D[r][i] == 0)
+                notZero = false;
+        }
 
-        return false; // replace me
+        return notZero;
     }
 
     public static int numNonZeroRows(int[][] array2D) {
@@ -21,10 +27,22 @@ public class ArrayResizer {
         return count;
     }
 
-    public static int[][] resize(int[][] array2D) {
-        // TODO part b
+    public static int[][] resize(int[][] array2D)
+    {
 
-        return null; // replace me
+        int[][] array = new int[numNonZeroRows(array2D)][array2D[0].length];
+
+        int rowsAdded = 0;
+        for(int i = 0; i < array2D.length; i++)
+        {
+            if(isNonZeroRow(array2D, i))
+            {
+                array[rowsAdded] = array2D[i];
+                rowsAdded++;
+            }
+        }
+
+        return array;
     }
 
     public static void check(boolean test) throws AssertionError {

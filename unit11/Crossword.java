@@ -1,5 +1,7 @@
 package unit11;
 
+import java.net.http.HttpResponse.PushPromiseHandler;
+
 // 2016 FRQ #3
 // https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap16_frq_computer_science_a.pdf#page=12
 
@@ -47,8 +49,25 @@ public class Crossword {
      * - The squares in the puzzle are labeled according to the crossword labeling
      * rule.
      */
-    public Crossword(boolean[][] blackSquares) {
-        /* to be implemented in part (b) */
+    public Crossword(boolean[][] blackSquares)
+    {
+        int num = 1;
+        puzzle = new Square[blackSquares.length][blackSquares[0].length];
+        for(int r = 0; r < blackSquares.length; r++)
+        {
+            for(int c = 0; c < blackSquares[r].length; c++)
+            {
+                if(toBeLabeled(r, c, blackSquares))
+                {
+                    puzzle[r][c] = new Square(blackSquares[r][c], num);
+                    num++;
+                }
+                else
+                {
+                    puzzle[r][c] = new Square(blackSquares[r][c], 0);
+                }
+            }
+        }
 
     }
 
@@ -60,10 +79,19 @@ public class Crossword {
      * true.
      * Precondition: r and c are valid indexes in blackSquares.
      */
-    private boolean toBeLabeled(int r, int c, boolean[][] blackSquares) {
-        /* to be implemented in part (a) */
-
-        return false; // replace me!
+    private boolean toBeLabeled(int r, int c, boolean[][] blackSquares)
+    {
+        if(blackSquares[r][c])
+            return false;
+        if(r-1 < 0)
+            return true;
+        if(c-1 < 0)
+            return true;
+        if(blackSquares[r][c - 1])
+            return true;
+        if(blackSquares[r-1][c])
+            return true;
+        return false;
     }
 
     // There may be instance variables, constructors, and methods that are not
