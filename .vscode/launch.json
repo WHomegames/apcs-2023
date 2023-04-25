@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "LightBoard",
+            "request": "launch",
+            "mainClass": "unit11.LightBoard",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
             "name": "Crossword",
             "request": "launch",
             "mainClass": "unit11.Crossword",

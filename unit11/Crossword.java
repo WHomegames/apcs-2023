@@ -1,7 +1,5 @@
 package unit11;
 
-import java.net.http.HttpResponse.PushPromiseHandler;
-
 // 2016 FRQ #3
 // https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap16_frq_computer_science_a.pdf#page=12
 
