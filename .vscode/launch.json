@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "unit11.DiceGame_DoubleTrouble.Main",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
             "name": "LightBoard",
             "request": "launch",
             "mainClass": "unit11.LightBoard",
