@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Successors",
+            "request": "launch",
+            "mainClass": "unit11.Successors",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
+            "name": "Scuffed",
+            "request": "launch",
+            "mainClass": "unit11.Scuffed",
+            "projectName": "apcs-2023_80f8798b"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "unit11.DiceGame_DoubleTrouble.Main",

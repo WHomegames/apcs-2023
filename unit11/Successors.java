@@ -20,16 +20,32 @@ class Position {
 }
 
 public class Successors {
-    public static Position findPosition(int num, int[][] intArr) {
-        // TODO part a
+    public static Position findPosition(int num, int[][] intArr)
+    {
+        for(int i = 0; i < intArr.length; i++)
+        {
+            for(int j = 0; j < intArr[i].length; j++)
+            {
+                if(intArr[i][j] == num)
+                    return new Position(i, j);
+            }
+        }
 
         return null; // replace me
     }
 
     public static Position[][] getSuccessorArray(int[][] intArr) {
-        // TODO part b
+        Position[][] positions = new Position[intArr.length][intArr[0].length];
 
-        return null; // replace me
+        for(int i = 0; i < intArr.length; i++)
+        {
+            for(int j = 0; j < intArr[i].length; j++)
+            {
+                positions[i][j] = findPosition(intArr[i][j], intArr);
+            }
+        }
+
+        return positions;
     }
 
     public static void check(boolean test) throws AssertionError {
