@@ -31,7 +31,7 @@ public class Successors {
             }
         }
 
-        return null; // replace me
+        return null;
     }
 
     public static Position[][] getSuccessorArray(int[][] intArr) {
@@ -41,7 +41,7 @@ public class Successors {
         {
             for(int j = 0; j < intArr[i].length; j++)
             {
-                positions[i][j] = findPosition(intArr[i][j], intArr);
+                positions[i][j] = findPosition(intArr[i][j] + 1, intArr);
             }
         }
 
