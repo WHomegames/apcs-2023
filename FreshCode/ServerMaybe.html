@@ -1,0 +1,58 @@
+<html>
+
+<head>
+  <style>
+    .square {
+      width: 25px;
+      height: 25px;
+      background-color: #b9b9b9;
+      margin: 0.5px;
+      float: left;
+    }
+    .row {
+      clear: both;
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- <div class="row">
+    <div class="square" style="background-color: red;"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+  </div>
+  <div class="row">
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+  </div>
+  <div class="row">
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+  </div>
+  Add more row div elements with square div elements as needed -->
+
+
+<script type="text/javascript">
+
+var x, y;
+
+for(x = 0; x < 8; x++)
+{
+    document.write(`<div class="row">`);
+    for(y = 0; y < 8; y++)
+    {
+        document.write(`<div class="square" style="background-color: red;"></div>`);
+        //document.write('<td>' + (x + row));
+        // Whatever else you want to output
+    }
+    document.write(`</div>`);
+}
+
+</script>
+
+</body>
+</html>
